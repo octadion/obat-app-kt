@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.octadion.tugas_akhir.fragment.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/actionAdd"
+            app:destination="@id/addFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_category"
+        android:name="com.octadion.tugas_akhir.fragment.CategoryFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_category" >
+        <action
+            android:id="@+id/actionAdd2"
+            app:destination="@id/addFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.octadion.tugas_akhir.fragment.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/actionUpdateEmail"
+            app:destination="@id/updateEmailFragment" />
+        <action
+            android:id="@+id/actionChangePassword"
+            app:destination="@id/changePasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateEmailFragment"
+        android:name="com.octadion.tugas_akhir.fragment.UpdateEmailFragment"
+        android:label="fragment_update_email"
+        tools:layout="@layout/fragment_update_email" >
+        <action
+            android:id="@+id/actionEmailUpdated"
+            app:destination="@id/nav_profile"
+            app:popUpTo="@id/nav_profile"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/changePasswordFragment"
+        android:name="com.octadion.tugas_akhir.fragment.ChangePasswordFragment"
+        android:label="fragment_change_password"
+        tools:layout="@layout/fragment_change_password" >
+        <action
+            android:id="@+id/actionPasswordChanged"
+            app:destination="@id/nav_profile"
+            app:popUpTo="@id/nav_profile"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/addFragment"
+        android:name="com.octadion.tugas_akhir.fragment.AddFragment"
+        android:label="fragment_add"
+        tools:layout="@layout/fragment_add" >
+        <action
+            android:id="@+id/actionAdded"
+            app:destination="@id/nav_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/addFragment2"
+        android:name="com.octadion.tugas_akhir.fragment.AddFragment2"
+        android:label="fragment_add2"
+        tools:layout="@layout/fragment_add2" >
+        <action
+            android:id="@+id/actionAdded2"
+            app:destination="@id/nav_category" />
+    </fragment>
+</navigation>
